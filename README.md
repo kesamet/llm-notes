@@ -5,15 +5,15 @@
 | Full finetuning a very small model `EleutherAI/pythia-70m` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_full_pythia.ipynb) |
 | QLoRA finetuning `Llama2-7b` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_qlora_llama2.ipynb) |
 | QLoRA finetuning `Mistral-7b` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_qlora_mistral.ipynb) |
+| LoRA finetuning `Mistral-7b` with DPO | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_dpo_mistral.ipynb) |
 | GGUF quantization | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/quantize_model_with_gguf.ipynb) |
+| Merging LLMs with Mergekit | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/merging_with_mergekit.ipynb) |
 
 
-## Finetuning
-
-There are three different finetuning approaches:
+## Finetuning methods
 
 | Finetuning method | Remarks |
-| ------------------- | ------- |
+| ----------------- | ------- |
 | Full Fine-Tuning | Typically requires 4 GPUs with 24GiB of GPU VRAM on a single node multi-GPU cluster and fine-tuning Deepspeed |
 | Parameter Efficient Fine-Tuning (PEFT), e.g. LoRA | Typically requires 4 GPUs with 24GiB of GPU VRAM on a single node multi-GPU cluster and fine-tuning Deepspeed |
 | Quantization-Based Fine-Tuning (QLoRA)| Could use a single GPU with 16GiB of GPU VRAM for 7b model |
@@ -21,13 +21,11 @@ There are three different finetuning approaches:
 
 ## Quantization methods
 
-### Quantize model to GGUF format with llama.cpp
+### GGUF quantization with llama.cpp
 
 References: [llama.cpp](https://github.com/ggerganov/llama.cpp)
 
 The names of the quantization methods follow the naming convention: "q" + the number of bits + the variant used.
-
-List of all the possible quant methods:
 
 | Quantization method | Remarks |
 | ------------------- | ------- |
@@ -46,3 +44,14 @@ List of all the possible quant methods:
 | `q6_k` | Uses Q8_K for all tensors |
 | `q8_0` | Almost indistinguishable from float16. High resource use and slow. Not recommended for most users |
 
+
+## Merging LLMs
+
+### Merging models with mergekit
+
+| Merging method | Remarks |
+| -------------- | ------- |
+| Spherical Linear Interpolation (SLERP) | Only two models each time |
+| TIES | Can merge multiple models at a time |
+| DARE | Similar to TIES |
+| Passthrough | Experimental. Merge LLMs by concatenating layers from different models |
