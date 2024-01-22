@@ -21,9 +21,7 @@
 
 ## Quantization methods
 
-### GGUF quantization with llama.cpp
-
-References: [llama.cpp](https://github.com/ggerganov/llama.cpp)
+### GGUF quantization with [llama.cpp](https://github.com/ggerganov/llama.cpp)
 
 The names of the quantization methods follow the naming convention: "q" + the number of bits + the variant used.
 
@@ -47,7 +45,7 @@ The names of the quantization methods follow the naming convention: "q" + the nu
 
 ## Merging LLMs
 
-### Merging models with mergekit
+### Merging models with [mergekit](https://github.com/cg123/mergekit)
 
 | Merging method | Remarks |
 | -------------- | ------- |
