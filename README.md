@@ -22,6 +22,10 @@
 
 ## Quantization methods
 
+Quantization techniques aim to represent data more efficiently by using fewer bits while minimizing the loss of accuracy. This involves converting data types to represent the same information with reduced bit precision. Moreover, lower precision can lead to faster inference times as calculations require less time with fewer bits.
+
+[Summary of quantization techniques](https://huggingface.co/docs/transformers/main/en/quantization) by HuggingFace
+
 ### GGUF quantization with [llama.cpp](https://github.com/ggerganov/llama.cpp)
 
 The names of the quantization methods follow the naming convention: "q" + the number of bits + the variant used.
