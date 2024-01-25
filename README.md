@@ -1,12 +1,13 @@
 # llm-notes
 
-| Description | Notebook |
-| ----------- | -------- |
-| Full finetuning a very small model `EleutherAI/pythia-70m` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_full_pythia.ipynb) |
-| QLoRA finetuning `Llama2-7b` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_qlora_llama2.ipynb) |
-| QLoRA finetuning `Mistral-7b` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_qlora_mistral.ipynb) |
-| LoRA finetuning with DPO | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_dpo.ipynb) |
-| GGUF quantization | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/quantize_model_with_gguf.ipynb) |
+| Title | Notebook |
+| ----- | -------- |
+| Full finetuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_full_pythia.ipynb) |
+| QLoRA finetuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_qlora_mistral.ipynb) |
+| DPO LoRA finetuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_dpo.ipynb) |
+| GGUF quantization | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/quantize_llm_gguf.ipynb) |
+| AWQ quantization | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/quantize_llm_awq.ipynb) |
+| ExLlamaV2 quantization | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/quantize_llm_exllamav2.ipynb) |
 | Merging LLMs with Mergekit | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/merging_with_mergekit.ipynb) |
 
 
@@ -41,6 +42,8 @@ The names of the quantization methods follow the naming convention: "q" + the nu
 | `q5_k_s` | Uses Q5_K for all tensors |
 | `q6_k` | Uses Q8_K for all tensors |
 | `q8_0` | Almost indistinguishable from float16. High resource use and slow. Not recommended for most users |
+
+### [ExLlamaV2](https://github.com/turboderp/exllamav2) quantization
 
 
 ## Merging LLMs
