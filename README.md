@@ -9,6 +9,8 @@
 | AWQ quantization | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/quantize_llm_awq.ipynb) |
 | ExLlamaV2 quantization | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/quantize_llm_exllamav2.ipynb) |
 | Merging LLMs with Mergekit | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/merging_with_mergekit.ipynb) |
+| Supervised finetuning LLM with Huggingface | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/supervised_fine_tuning_with_huggingface.ipynb) |
+| Finetune SFT model with DPO | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_SFT_model_with_dpo.ipynb) |
 
 
 ## Finetuning methods
