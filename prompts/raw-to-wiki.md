@@ -39,7 +39,7 @@ Review the existing wiki pages provided. Where the new article covers a topic al
 
 ### Existing wiki pages:
 
-<paste contents of each file in summaries/>
+Read `summaries/summary.md` for a condensed index of all existing wiki pages with their topics, key terms, and covered models. Refer to individual files in `summaries/` for full detail when needed.
 
 ### Raw article to convert:
 
