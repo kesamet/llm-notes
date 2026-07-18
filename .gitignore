@@ -163,6 +163,7 @@ cython_debug/
 .DS_Store
 
 # Others
+archive/
 *.jsonl
 *.yaml
 *.json
