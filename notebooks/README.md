@@ -3,8 +3,9 @@
 | Title | Notebook |
 | ----- | -------- |
 | Full finetuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_full_pythia.ipynb) |
-| QLoRA finetuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_qlora_mistral.ipynb) |
-| DPO LoRA finetuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_dpo.ipynb) |
+| Supervised finetuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_sft.ipynb) |
+| GRPO finetuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_grpo.ipynb) |
+| DPO finetuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_dpo.ipynb) |
 | ORPO finetuning | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/finetune_orpo.ipynb) |
 | GGUF quantization | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/quantize_llm_gguf.ipynb) |
 | AWQ quantization | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kesamet/analyser/blob/master/quantize_llm_awq.ipynb) |
@@ -63,3 +64,59 @@ The names of the quantization methods follow the naming convention: "q" + the nu
 | TIES | Can merge multiple models at a time |
 | DARE | Similar to TIES |
 | Passthrough | Experimental. Merge LLMs by concatenating layers from different models |
+
+
+## Export LLMs — push to Hub / save merged / convert to GGUF
+
+Merge adapter + base into a single 16-bit model (for vLLM, HF inference):
+```python
+model.save_pretrained_merged("<model-name>", tokenizer, save_method="merged_16bit")
+model.push_to_hub_merged("HF_USERNAME/<model-name>", tokenizer, save_method="merged_16bit", token="YOUR_HF_TOKEN")
+```
+
+Merged 4-bit (for low-VRAM serving):
+```python
+model.save_pretrained_merged("<model-name>", tokenizer, save_method="merged_4bit")
+model.push_to_hub_merged("HF_USERNAME/<model-name>", tokenizer, save_method="merged_4bit", token="YOUR_HF_TOKEN")
+```
+
+Just LoRA adapters
+```python
+model.save_pretrained("<model-name>")
+tokenizer.save_pretrained("<model-name>")
+
+model.push_to_hub("HF_USERNAME/<model-name>", token="YOUR_HF_TOKEN")
+tokenizer.push_to_hub("HF_USERNAME/<model-name>", token="YOUR_HF_TOKEN")
+```
+
+### GGUF / llama.cpp Conversion
+To save to `GGUF` / `llama.cpp`, we clone `llama.cpp` and default save it to `q8_0`. We allow all methods like `q4_k_m`. Use `save_pretrained_gguf` for local saving and `push_to_hub_gguf` for uploading to HF.
+
+Some supported quant methods (full list on our [docs page](https://unsloth.ai/docs/basics/inference-and-deployment/saving-to-gguf)):
+* `q8_0` - Fast conversion. High resource use, but generally acceptable.
+* `q4_k_m` - Recommended. Uses Q6_K for half of the attention.wv and feed_forward.w2 tensors, else Q4_K.
+* `q5_k_m` - Recommended. Uses Q6_K for half of the attention.wv and feed_forward.w2 tensors, else Q5_K.
+
+Save to 8bit Q8_0
+```python
+model.save_pretrained_gguf("<model-name-gguf>", tokenizer,)
+model.push_to_hub_gguf("HF_USERNAME/<model-name-gguf>", tokenizer, token="YOUR_HF_TOKEN")
+```
+
+Save to 16bit GGUF
+```python
+model.save_pretrained_gguf("<model-name-gguf>", tokenizer, quantization_method="f16")
+model.push_to_hub_gguf("HF_USERNAME/<model-name-gguf>", tokenizer, quantization_method="f16", token="YOUR_HF_TOKEN")
+```
+
+Save to q4_k_m GGUF
+```python
+model.save_pretrained_gguf("<model-name-gguf>", tokenizer, quantization_method = "q4_k_m")
+model.push_to_hub_gguf("HF_USERNAME/<model-name-gguf>", tokenizer, quantization_method="q4_k_m", token="YOUR_HF_TOKEN")
+```
+
+Deploy with `llama.cpp`
+```bash
+./llama.cpp/llama-quantize model_gguf/unsloth.Q8_0.gguf unsloth.Q4_K_M.gguf 4
+```
+
