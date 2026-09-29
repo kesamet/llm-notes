@@ -105,7 +105,7 @@ The primary cost of maintaining a knowledge base is not reading or thinking but 
 1. **Download a source as markdown:**
 
 ```bash
-uv run python extract.py <url or filepath>
+uv run python scripts/extract.py <url or filepath>
 ```
 
 2. **Ingest it with the agent**, for example in Claude Code:
