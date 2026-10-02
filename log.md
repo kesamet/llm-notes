@@ -10,7 +10,7 @@ Created wiki page summarizing inference optimization taxonomy, quantization, pru
 ## [2026-07-17] ingest | Intelligent AI Delegation
 Created wiki page covering AI delegation framework, task decomposition, multi-objective optimization, adaptive coordination, trust/reputation, and permission handling.
 
-## [2026-07-17] ingest | Dive into Claude Code: Design Space of AI Agent Systems
+## [2026-07-17] ingest | Dive into Claude Code: The Design Space of Today's and Future AI Agent Systems
 Created wiki page on agent architecture, tool dispatch, permission/safety architecture, MCP extensibility, context construction, and memory.
 
 ## [2026-07-17] ingest | From AGI to ASI
@@ -43,9 +43,8 @@ Created wiki page on LLM evaluation methodologies, benchmarks, and scoring syste
 ## [2026-07-17] ingest | Using Local Coding Agents
 Created wiki page on local coding agent setup, model selection, harness comparison, and Ollama integration.
 
-## [2026-07-17] create | index.md
-Generated content-oriented catalog from summaries/summary.md.
+## [2026-08-08] ingest | Controlling Reasoning Effect in LLMs
+Created wiki page surveying reasoning-effort training receipes (DeepSeek V4, Nemotron 3 Ultra, Kimi K2.5/K3, GLM-5, Qwen3, Inkling) and the training-vs-inference-scaling framing; cross-referenced against existing DeepSeek and gpt-oss pages.
 
-## [2026-07-17] create | log.md
-Initialized chronological activity log.
-
+## [2026-09-10] ingest | GPT-6 Astra, Looped Transformers, and Hidden Reasoning
+Created wiki page on GPT-6 Astra's looped transformer architecture, hidden reasoning mechanisms, and test-time compute scaling; represents a shift from standard decoder stacks to internal reasoning loops
