@@ -1,3 +1,15 @@
+---
+title: "Understanding the 4 Main Approaches to LLM Evaluation"
+type: summary
+source: "raw/understanding-the-4-main-approaches-to-llm-evaluation-from-scratch.md"
+date_ingested: 2026-07-17
+tags: [evaluation]
+concepts: [llm-evaluation, multiple-choice-benchmarks, verification-evaluation, arena-leaderboards, llm-as-judge, elo-rating, bradley-terry, process-reward-models]
+entities: []
+status: draft
+related: []
+---
+
 # Understanding the 4 Main Approaches to LLM Evaluation -- Wiki
 
 > Based on Sebastian Raschka's article (Oct 2025)

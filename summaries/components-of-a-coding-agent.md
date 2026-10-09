@@ -1,3 +1,15 @@
+---
+title: "Components of A Coding Agent"
+type: summary
+source: "raw/components-of-a-coding-agent.md"
+date_ingested: 2026-07-17
+tags: [agents]
+concepts: [coding-agent-harness, repo-context, prompt-caching, tool-use, session-memory, subagent-delegation]
+entities: [claude-code, openclaw]
+status: draft
+related: []
+---
+
 # Components of A Coding Agent -- Wiki
 
 > Based on Sebastian Raschka's article (Apr 2026)

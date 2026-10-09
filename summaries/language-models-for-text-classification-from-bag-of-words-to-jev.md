@@ -1,3 +1,15 @@
+---
+title: "Language Models for Text Classification: From Bag-of-Words to Jev"
+type: summary
+source: "raw/language-models-for-text-classification-from-bag-of-words-to-jev.md"
+date_ingested: 2026-09-30
+tags: [agents]
+concepts: []
+entities: []
+status: draft
+related: []
+---
+
 # Language Models for Text Classification: From Bag-of-Words to Jev -- Wiki
 
 > Based on Sebastian Raschka's article (September 2026)

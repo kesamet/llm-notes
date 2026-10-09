@@ -1,3 +1,15 @@
+---
+title: "The Big LLM Architecture Comparison"
+type: summary
+source: "raw/the-big-llm-architecture-comparison.md"
+date_ingested: 2026-07-17
+tags: [llm-architecture]
+concepts: [attention, moe, normalization, positional-encoding, mtp, rope, swiglu, gqa]
+entities: [deepseek, qwen, llama, gemma, mistral]
+status: draft
+related: []
+---
+
 # The Big LLM Architecture Comparison -- Wiki
 
 > Based on Sebastian Raschka's article (Jul 2025, last updated Apr 2026)

@@ -1,3 +1,15 @@
+---
+title: "A Visual Guide to Attention Variants in Modern LLMs"
+type: summary
+source: "raw/a-visual-guide-to-attention-variants-in-modern-llms.md"
+date_ingested: 2026-07-17
+tags: [llm-architecture, attention]
+concepts: [mha, gqa, mla, swa, dsa, gated-attention, hybrid-attention, kv-cache]
+entities: []
+status: draft
+related: []
+---
+
 # A Visual Guide to Attention Variants in Modern LLMs -- Wiki
 
 > Based on Sebastian Raschka's article (March 2026)

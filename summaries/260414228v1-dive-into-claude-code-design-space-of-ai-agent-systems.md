@@ -1,3 +1,15 @@
+---
+title: "Dive into Claude Code: The Design Space of Today's and Future AI Agent Systems"
+type: summary
+source: "raw/260414228v1-dive-into-claude-code-design-space-of-ai-agent-systems.md"
+date_ingested: 2026-07-17
+tags: [agents]
+concepts: [agent-architecture, tool-dispatch, permission-safety, mcp-extensibility, context-construction, session-memory]
+entities: [claude-code]
+status: draft
+related: []
+---
+
 # Dive into Claude Code: The Design Space of Today's and Future AI Agent Systems -- Wiki
 
 > Based on Jiacheng Liu, Xiaohan Zhao, Xinyi Shang, and Zhiqiang Shen's paper (April 2026)

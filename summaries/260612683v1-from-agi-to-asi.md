@@ -1,3 +1,15 @@
+---
+title: "From AGI to ASI"
+type: summary
+source: "raw/260612683v1-from-agi-to-asi.md"
+date_ingested: 2026-07-17
+tags: [agi-asi]
+concepts: [agi-asi-definitions, recursive-self-improvement, multi-agent-coordination, scaling-compute, algorithmic-paradigm-shifts]
+entities: []
+status: draft
+related: []
+---
+
 # From AGI to ASI
 
 > Based on Genewein et al.'s report (June 2026)
