@@ -1,3 +1,15 @@
+---
+title: "The Batch: Foundational Algorithms, Where They Came From, Where They're Going"
+type: summary
+source: "raw/the-batch-foundational-algorithms.md"
+date_ingested: 2026-09-08
+tags: []
+concepts: []
+entities: []
+status: draft
+related: []
+---
+
 # The Batch: Foundational Algorithms, Where They Came From, Where They're Going -- Wiki
 
 > Based on Andrew Ng's article (April 2022)

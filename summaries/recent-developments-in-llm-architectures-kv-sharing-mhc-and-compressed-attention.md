@@ -1,3 +1,15 @@
+---
+title: "Recent Developments in LLM Architectures: KV Sharing, mHC, and Compressed Attention"
+type: summary
+source: "raw/recent-developments-in-llm-architectures-kv-sharing-mhc-and-compressed-attention.md"
+date_ingested: 2026-07-17
+tags: [llm-architecture, inference]
+concepts: [cross-layer-kv-sharing, mhc, csa, hca, per-layer-embeddings, attention-budgeting]
+entities: []
+status: draft
+related: []
+---
+
 # Recent Developments in LLM Architectures: KV Sharing, mHC, and Compressed Attention -- Wiki
 
 > Based on Sebastian Raschka's article (May 2026)

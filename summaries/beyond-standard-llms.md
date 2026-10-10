@@ -1,3 +1,15 @@
+---
+title: "Beyond Standard LLMs"
+type: summary
+source: "raw/beyond-standard-llms.md"
+date_ingested: 2026-07-17
+tags: [llm-architecture]
+concepts: [linear-attention, text-diffusion, code-world-models, recursive-transformers]
+entities: []
+status: draft
+related: []
+---
+
 # Beyond Standard LLMs -- Wiki
 
 > Based on Sebastian Raschka's article (November 2025)

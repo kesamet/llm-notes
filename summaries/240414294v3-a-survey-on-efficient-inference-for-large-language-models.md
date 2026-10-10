@@ -1,3 +1,15 @@
+---
+title: "A Survey on Efficient Inference for Large Language Models"
+type: summary
+source: "raw/240414294v3-a-survey-on-efficient-inference-for-large-language-models.md"
+date_ingested: 2026-07-17
+tags: [inference, llm-architecture]
+concepts: [quantization, pruning, sparse-attention, speculative-decoding, knowledge-distillation, offloading, operator-fusion, dynamic-inference, early-exit]
+entities: []
+status: draft
+related: []
+---
+
 # A Survey on Efficient Inference for Large Language Models -- Wiki
 
 > Based on Zhou et al.'s survey paper (July 2024)

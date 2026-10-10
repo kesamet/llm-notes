@@ -1,4 +1,16 @@
- A Technical Tour of the DeepSeek Models from V3 to V3.2 -- Wiki
+---
+title: "A Technical Tour of the DeepSeek Models from V3 to V3.2"
+type: summary
+source: "raw/a-technical-tour-of-the-deepseek-models-from-v3-to-v32.md"
+date_ingested: 2026-07-17
+tags: [llm-architecture, training, inference]
+concepts: [mla, moe, dsa, rlvr, grpo, mhc, self-verification, self-refinement]
+entities: [deepseek, deepseek-v3, deepseek-v3.2]
+status: draft
+related: []
+---
+
+# A Technical Tour of the DeepSeek Models from V3 to V3.2 -- Wiki
 
 > Based on Sebastian Raschka's article (December 2025, updated January 2026)
 > Source: https://magazine.sebastianraschka.com/p/technical-deepseek

@@ -1,3 +1,15 @@
+---
+title: "Using Local Coding Agents"
+type: summary
+source: "raw/using-local-coding-agents.md"
+date_ingested: 2026-07-17
+tags: [agents, inference]
+concepts: [local-llm, coding-agent-harness, model-selection, ssh-tunnel]
+entities: [ollama, qwen-code, claude-code]
+status: draft
+related: []
+---
+
 # Using Local Coding Agents -- Wiki
 
 > Based on Sebastian Raschka's article (Jun 2026)

@@ -1,3 +1,15 @@
+--
+title: "From GPT-2 to gpt-oss: Analyzing the Architectural Advances"
+type: summary
+source: "raw/from-gpt-2-to-gpt-oss-analyzing-the-architectural-advances.md"
+date_ingested: 2026-07-17
+tags: [llm-architecture]
+concepts: [rope, swiglu, moe, gqa, swa, rmsnorm, quantization, reasoning-effort-control]
+entities: [openai, gpt-oss]
+status: draft
+related: []
+---
+
 # From GPT-2 to gpt-oss: Analyzing the Architectural Advances -- Wiki
 
 > Based on Sebastian Raschka's article (Aug 2025)

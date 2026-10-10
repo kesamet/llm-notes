@@ -1,3 +1,15 @@
+---
+title: "Intelligent AI Delegation"
+type: summary
+source: "raw/260211865v1-intelligent-ai-delegation.md"
+date_ingested: 2026-07-17
+tags: [agents]
+concepts: [ai-delegation, task-decomposition, multi-objective-optimization, adaptive-coordination, trust-reputation, permission-handling]
+entities: []
+status: draft
+related: []
+---
+
 # Intelligent AI Delegation -- Wiki
 
 > Based on Nenad Tomasev, Matija Franklin, and Simon Osindero's paper (February 2026)
