@@ -14,19 +14,24 @@ The human role is curatorial: choose sources, direct emphasis, ask questions, an
 
 ## Architecture
 
-The system is organized into three layers:
+The system is organized into two layers:
 
 1. **Raw sources** — immutable source documents (articles, papers, images, data files, transcripts). The agent reads from these but never modifies them. They remain the source of truth.
-2. **The wiki** — agent-generated markdown files, including source summaries, entity pages, concept pages, comparison tables, and syntheses. The agent creates, updates, and cross-references these pages; the user reads them.
-3. **The schema** — a project-specific instruction file such as `CLAUDE.md` or `AGENTS.md` that defines directory layout, page conventions, and workflows for ingestion, querying, and maintenance. It is treated as code and co-evolved with the wiki.
+2. **The wiki** — agent-generated source summaries. The agent creates, updates, and cross-references these pages; the user reads them.
 
-```text
-raw/ # immutable source documents (articles, papers, images, data)
-assets/ # downloaded images referenced by sources
-wiki/ # agent-owned markdown — summaries, entities, concepts, syntheses
-index.md # content-oriented catalog of every page
-log.md # chronological, append-only record of activity
-CLAUDE.md # schema: structure, conventions, workflows (the agent's instructions)
+```
+llm-notes/
+├── README.md # Pattern documentation and motivation
+├── INDEX.md # Content-oriented catalog of every page
+├── TAXONOMY.md # Controlled vocabulary for tags
+├── raw/ # Layer 1: Immutable source documents
+│ └── *.md # Extracted articles, papers, transcripts
+├── wiki/ # Layer 2: Source summaries (1:1 with raw/)
+│ └── *.md # Distilled summaries with frontmatter
+├── prompts/ # Operational prompts and workflows
+│ └── raw-to-wiki.md # Ingest workflow
+└── scripts/ # Automation and validation
+│ └── extract.py # CLI tool: URL/PDF → markdown in raw/
 ```
 
 ## Workflows
@@ -38,8 +43,7 @@ Add a source to `raw/` and instruct the agent to process it. A standard ingestio
 - Read and summarize the source.
 - Discuss key takeaways with the user.
 - Write or update a source summary page.
-- Update `index.md` and relevant entity, concept, and synthesis pages.
-- Append a dated entry to `log.md`.
+- Update `INDEX.md`.
 
 A single source often touches 10–15 pages. Ingest sources individually when quality and supervision matter; batch ingestion is acceptable when throughput is preferred.
 
@@ -49,38 +53,11 @@ Ask questions against the wiki. The agent locates relevant pages, reads them, an
 
 At moderate scale (roughly 100 sources and 400K words), this approach works well without embedding-based RAG because the agent maintains an index and concise summaries. Useful answers should be filed back into the wiki so that exploratory work compounds instead of being lost to chat history.
 
-### Lint
+## Index
 
-Periodically run a health check on the wiki. Typical concerns include:
+### `INDEX.md`
 
-- Contradictions between pages
-- Stale claims superseded by newer sources
-- Orphan pages with no inbound links
-- Important concepts that lack dedicated pages
-- Missing cross-references
-- Gaps that could be closed with a targeted web search
-
-The agent can also propose new questions and candidate sources to investigate.
-
-## Index and log
-
-### `index.md`
-
-A content-oriented catalog of every page, with links, one-line summaries, and optional metadata, organized by category. The agent updates `index.md` on every ingest and consults it first when answering queries.
-
-### `log.md`
-
-A chronological, append-only record of ingests, queries, and lint passes. Entries use a consistent prefix such as:
-
-```markdown
-## [2026-04-02] ingest | Article Title
-```
-
-This makes the log parseable with standard Unix tools, for example:
-
-```bash
-grep "^## \[" log.md | tail -5
-```
+A content-oriented catalog of every page, with links, one-line summaries, and optional metadata, organized by category. The agent updates `INDEX.md` on every ingest and consults it first when answering queries.
 
 ## Tooling
 
@@ -91,10 +68,6 @@ The following tools and integrations are commonly useful:
 - **Marp** — markdown-based slide decks generated from wiki content.
 - **Dataview** — Obsidian plugin for querying YAML frontmatter and rendering dynamic tables.
 - **Local search** — at small scale the index file is sufficient; at larger scale, a local search engine such as [qmd](https://github.com/tobi/qmd) (hybrid BM25/vector + LLM reranking) or a purpose-built script can help.
-
-## Image handling
-
-To ensure images remain accessible and viewable by the agent, download them locally. In Obsidian: set **Settings → Files and links → Attachment folder path** to `raw/assets/`, then bind **Settings → Hotkeys → Download attachments for current file** (for example, Ctrl+Shift+D). After clipping a web article, run the hotkey so all images are stored on disk.
 
 ## Why this works
 
@@ -114,11 +87,8 @@ uv run python scripts/extract.py <url or filepath>
 Create a wiki page with @<markdown.md> using the prompt: @prompts/raw-to-wiki.md
 ```
 
-3. **Iterate.** Query the wiki, run lint passes, and file useful answers back into it. Co-evolve the schema (`CLAUDE.md`) as conventions stabilize.
-
 ## Scope and limitations
 
 This pattern is intentionally abstract and the implementation modular. Directory structure, schema conventions, page formats, and tooling should be adapted to the domain, the sources, and the LLM in use. The README's purpose is to communicate the pattern; the agent and user instantiate it.
 
 **Summary:** source documents are collected in `raw/`, compiled by an LLM into an interlinked markdown wiki in `wiki/`, and then operated on through CLI-based workflows for querying, synthesis, and incremental maintenance, typically viewed in Obsidian. The user curates and directs; the agent writes and maintains the wiki.
-

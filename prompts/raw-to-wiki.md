@@ -28,7 +28,7 @@ related: [page1.md, page2.md]
 - `type`: Always "summary" for source summaries
 - `source`: Path to raw source file
 - `date_ingested`: Today's date in ISO 8601 format
-- `tags`: Use controlled vocabulary from `wiki/TAXONOMY.md`
+- `tags`: Use controlled vocabulary from `TAXONOMY.md`
 - `concepts`: List of concepts covered (use tags from taxonomy)
 - `entities`: List of entities mentioned (models, orgs, tools)
 - `status`: Always "draft" for new pages
@@ -49,13 +49,6 @@ related: [page1.md, page2.md]
 - **Preserve quantitative detail.** Keep specific numbers (parameter counts, benchmark scores, ratios, dates) -- these are what make a wiki entry useful for quick lookup.
 - **Document evidence.** For quantitative claims, note the source (table, figure, section) and benchmark used.
 - **Add a "Key Takeaways" section** with 5-8 numbered, opinionated summaries of what matters most.
-- **Add an "Evolution" section** before References:
-
-```markdown
-## Evolution
-
-- **YYYY-MM-DD**: Initial extraction from <source>. Documented <key patterns/findings>.
-```
 
 ## Cross-referencing the existing knowledge base
 
@@ -78,13 +71,6 @@ For each related concept/entity/comparison/synthesis page:
 1. Add new evidence to the "Evidence Trail" table
 2. Add dated entry to the "Evolution" section
 3. Update frontmatter `related` field if needed
-
-### Create New Pages
-If the article introduces a major new concept or entity not covered:
-- Create concept page in `wiki/concepts/`
-- Create entity page in `wiki/entities/`
-- Create comparison page in `wiki/comparisons/` if comparing multiple approaches
-- Create synthesis page in `wiki/syntheses/` if integrating multiple sources
 
 ### Use Wikilinks
 Replace prose cross-references with Obsidian wikilinks:
@@ -116,25 +102,15 @@ For quantitative claims, document:
 - Keep paragraphs short (3-5 sentences max)
 - Use `code formatting` for model names, hyperparameter values, and code references
 
-## Post-Ingest Checklist
+## Post-Ingest
 
-After creating the summary page:
-
-1. ✅ Update `index.md` with new entry
-2. ✅ Append entry to `log.md`: `## [YYYY-MM-DD] ingest | <Title>`
-3. ✅ Update related concept/entity/comparison/synthesis pages
-4. ✅ Add pattern extraction to `wiki/EVOLUTION_LOG.md`
-5. ✅ Run `python scripts/lint_kb.py` to verify consistency
+After creating the summary page, update `INDEX.md` with new entry
 
 ---
 
 ### Existing wiki pages:
 
-Read `index.md` for a condensed index of all existing wiki pages with their topics, key terms, and covered models. Refer to individual files in `summaries/` for full detail when needed.
-
-Read `wiki/TAXONOMY.md` for the controlled vocabulary of tags.
-
-Read `wiki/EVOLUTION_LOG.md` for existing pattern extractions.
+Read `INDEX.md` for a condensed index of all existing wiki pages with their topics, key terms, and covered models. Refer to individual files in `wiki/` for full detail when needed.
 
 ### Raw article to convert:
 
